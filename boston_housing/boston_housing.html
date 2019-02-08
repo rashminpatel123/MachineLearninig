@@ -13142,7 +13142,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -13214,23 +13214,23 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Median price of the data</span>
-<span class="n">median_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Standard deviation of prices of the data</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Show the calculated statistics</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -13261,7 +13261,7 @@ Minimum price: $105000.0
 Maximum price: $1024800.0
 Mean price: $454342.944785
 Median price $438900.0
-Standard deviation of prices: $165340.277653
+Standard deviation of prices: $165171.131544
 </pre>
 </div>
 </div>
@@ -13512,7 +13512,7 @@ Standard deviation of prices: $165340.277653
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer</strong> : train:test ratio can affect the performance of final model. The higher value of ratio can lead to overfitting while lower value makes the model underfit.</p>
+<p><strong>Answer</strong> : One of the benefit of making a split is to check the performance of model on unseen data i.e test data which tells us how confident we are on our trained model. Secondly, the split ratio and proper shuffling also plays a significant role. The proper randomized shuffle of data ensures that model captures complete variations of the data and is not biased towards particular trend. And the proper ratio ensures that model is good fit and not under or over fit.</p>
 
 </div>
 </div>
@@ -13705,7 +13705,8 @@ Think about the pros and cons of adding more training points based on if the tra
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> For any given model, there are a number of hyperparameters which has to be fixed before the actual training of model. Hence, the performance of final trained model also depends on the choice of these hyperparameters. So we want to choose the best poosible combination of these hyperparameters which gives highest F1 score. So, grid search tries every combination and chooses the model with best performance on validation set.</p>
+<p><strong>Answer:</strong> For any given model, there are a number of hyperparameters which has to be fixed before the actual training of model. Hence, the performance of final trained model also depends on the choice of these hyperparameters. So we want to choose the best poosible combination of these hyperparameters which gives highest F1 score. So, grid search is a brute force method which tries every combination and chooses the model with best performance on validation set based on scoring function passed as argument.
+For example, in SVM, there are two hyperparameters, namely 'C' and 'kernel'. So, GridSearch tries various combinations of 'C' and 'kernel' to calculate the scoring fucntion and chooses the one with best score.</p>
 
 </div>
 </div>
